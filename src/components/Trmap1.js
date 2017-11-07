@@ -33,7 +33,7 @@ const request = require('request');
      }
 
      componentDidMount () {
-        Translink.getbuses().then((res) => console.log(res));
+        Translink.getbuses().then(() => console.log("oka"));
       }
 
      _renderBusMarker = (city) => {
