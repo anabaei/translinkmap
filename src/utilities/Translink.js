@@ -1,18 +1,17 @@
 
-
+const proxyurl = "http://localhost:3000/";
+const url = 'http://api.translink.ca/RTTIAPI/V1/buses?apiKey=I9V5BVca2ycYQfSEdqQ5&lat=49.187706&long=-122.850060';
 const header = new Headers({
    "Access-Control-Allow-Origin": "*",
    "Access-Control-Allow-Credentials": "true",
-   "Access-Control-Allow-Headers": "Content-Type, Authorization, x-id, Content-Length, X-Requested-With",
-   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+   "Accept": "application/json",
+   "Type": "application/json"
 });
 
 const Translink = {
   getbuses() {
-    return fetch('http://api.translink.ca/RTTIAPI/V1/stops?apiKey=I9V5BVca2ycYQfSEdqQ5&lat=49.187706&long=-122.850060',{
-    headers:header,
-    method: 'get',
-    mode: 'no-core'
+    return fetch( proxyurl+url ,{
+    headers:header
   }).then(res => res.json());
   }
 }

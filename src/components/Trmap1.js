@@ -7,7 +7,10 @@ import CityPin from './CityPin';
 import {Translink} from '../utilities/Translink'
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MapboxAccessToken
+ var buses = [];
+const TRANSLINK_LIVE_API_URL = 'http://api.translink.ca/rttiapi/v1/buses?apiKey=aqkEXwYsmjIr2Ioy0E6v';
 
+const request = require('request');
  class Trmap1 extends Component
 {
      constructor(props) {
@@ -29,10 +32,8 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MapboxAccessToken
 
      }
 
-
      componentDidMount () {
-        Translink.getbuses().then(res => {
-        console.log("XX"+res)});
+        Translink.getbuses().then((res) => console.log(res));
       }
 
      _renderBusMarker = (city) => {
@@ -44,6 +45,10 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MapboxAccessToken
            </Marker>
          );
        }
+
+
+
+
 
      render() {
 
