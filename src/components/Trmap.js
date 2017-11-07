@@ -32,7 +32,7 @@ const Map = ReactMapboxGl({
 
    return (
      <div>
-       
+
        <Map
           style="mapbox://styles/mapbox/streets-v9"
           center={[-0.13235092163085938,51.518250335096376]}
@@ -46,6 +46,7 @@ const Map = ReactMapboxGl({
 
             />
         </Map>
+
       <Feature coordinates={[51.531399, -0.153939]}/>
 
     </div>
